@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageEncode", "ImageEncode\ImageEncode.csproj", "{0519E1F4-EE2D-4223-B63F-DDA454B834EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageDecode", "ImageDecode\ImageDecode.csproj", "{40A1973B-B9BA-4641-8200-5A180C13DB87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0519E1F4-EE2D-4223-B63F-DDA454B834EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0519E1F4-EE2D-4223-B63F-DDA454B834EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0519E1F4-EE2D-4223-B63F-DDA454B834EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0519E1F4-EE2D-4223-B63F-DDA454B834EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40A1973B-B9BA-4641-8200-5A180C13DB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A1973B-B9BA-4641-8200-5A180C13DB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A1973B-B9BA-4641-8200-5A180C13DB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A1973B-B9BA-4641-8200-5A180C13DB87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
