@@ -12,7 +12,7 @@
 int getTimeSecond(void) {
     time_t t = time(0);   // get time now
     tm* now = localtime(&t);
-    return (now->tm_sec);
+    return (now->tm_hour * 3600 + now->tm_min * 60 + now->tm_sec);
 }
 
 int rd(int _max) {
