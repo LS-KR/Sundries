@@ -14,7 +14,7 @@ namespace ImageEncode
             string filesource = "";
             if (args.Length == 0)
             {
-                Console.Write("Input the source of the file you want to encrypt...\n> ");
+                Console.Write("Input the source of the file you want to encode...\n> ");
                 filesource = Console.ReadLine();
             }
             else

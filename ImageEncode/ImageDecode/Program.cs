@@ -14,7 +14,7 @@ namespace ImageDecode
             string filesource = "";
             if (args.Length == 0)
             {
-                Console.Write("Input the source of the file you want to decrypt...\n> ");
+                Console.Write("Input the source of the file you want to decode...\n> ");
                 filesource = Console.ReadLine();
             }
             else
