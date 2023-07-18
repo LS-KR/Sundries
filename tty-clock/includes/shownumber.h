@@ -79,10 +79,10 @@ int numbers[10][5][3] = {
     }
 };
 
-void showNumber(int num, int line) {
+void showNumber(int num, int line, std::string showing) {
     for (int i = 0; i < 3; ++i) {
         if (numbers[num][line][i])
-            std::cout << "\033[92;102m  " << std::flush;
+            std::cout << showing + "  " << std::flush;
         else
             std::cout << "\033[0m  " << std::flush;
     }

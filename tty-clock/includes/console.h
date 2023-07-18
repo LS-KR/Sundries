@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <termios.h>
+#include <sys/select.h>
 
 typedef struct {
     long width;
@@ -35,8 +36,17 @@ public:
     std::string ReadLine();
     std::string ReadLine(std::string notice);
     ::Box getConsoleBox();
+    bool kbhit();
+    char getKey();
+    char getKeyw();
+    void HideEcho();
+    void ShowEcho();
 private:
     Box boxl;
+    void initTermios(int echo);
+    void resetTermios(void);
+    char getch_(int echo);
+    struct termios old, current;
 protected:
 };
 
