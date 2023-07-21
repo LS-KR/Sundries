@@ -1,5 +1,7 @@
 
 #include "datetime.h"
+#include <bits/types/time_t.h>
+#include <cstdint>
 #include <string>
 
 DateTime::DateTime() {
@@ -62,4 +64,50 @@ void DateTime::Now() {
     Hour = now->tm_hour;
     Minute = now->tm_min;
     Second = now->tm_sec;
+}
+
+bool DateTime::operator==(DateTime t) {
+    if (this->Year != t.Year)
+        return false;
+    if (this->Month != t.Month)
+        return false;
+    if (this->Day != t.Day)
+        return false;
+    if (this->Hour != t.Hour)
+        return false;
+    if (this->Minute != t.Minute)
+        return false;
+    if (this->Day != t.Day)
+        return false;
+    return true;
+}
+
+bool DateTime::operator!=(DateTime t) {
+    return !(*this == t);
+}
+
+bool DateTime::operator<(DateTime t) {
+    if (this->Year != t.Year)
+        return this->Year < t.Year;
+    if (this->Month != t.Month)
+        return this->Month < t.Month;
+    if (this->Day != t.Day)
+        return this->Day < t.Day;
+    if (this->Hour != t.Hour)
+        return this->Hour < t.Hour;
+    if (this->Minute != t.Minute)
+        return this->Minute < t.Minute;
+    return this->Second < t.Second;
+}
+
+bool DateTime::operator<=(DateTime t) {
+    return ((*this < t) || (*this == t));
+}
+
+bool DateTime::operator>(DateTime t) {
+    return !(*this <= t);
+}
+
+bool DateTime::operator>=(DateTime t) {
+    return ((*this > t) || (*this == t));
 }

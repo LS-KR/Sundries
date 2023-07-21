@@ -30,6 +30,12 @@ public:
     ::Date getDate();
     ::Time getTime();
     void Now();
+    bool operator == (DateTime t);
+    bool operator != (DateTime t);
+    bool operator > (DateTime t);
+    bool operator < (DateTime t);
+    bool operator >= (DateTime t);
+    bool operator <= (DateTime t);
 private:
     uint16_t Year;
     uint16_t Month;
