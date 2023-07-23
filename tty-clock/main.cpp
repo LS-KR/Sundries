@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <iostream>
 #include <cstdlib>
+#include <ostream>
 #include <termios.h>
 #include <unistd.h>
 #include "datetime.cpp"
@@ -9,6 +10,8 @@
 #include "shownumber.h"
 #include <cctype>
 #include <ncurses.h>
+#include <unistd.h>
+#include <getopt.h>
 
 bool showSecond = false;
 int transcount = 0;
@@ -21,15 +24,45 @@ std::string transcolor[5] = {
 };
 int spaceCount = 0;
 int returnCount = 0;
+bool showonce = false;
 
-int main(void) {
+int main(int argc, char** argv) {
     DateTime dt;
     Console console;
     Box b = console.getConsoleBox();
+    int opt = 0;
     console.HideEcho();
     if ((b.height < 5) || (b.width < 39)) {
         console.WriteLine("Too small console!");
         return 233;
+    }
+    while ((opt = getopt(argc, argv, "hsc1")) != -1) {
+        switch (opt) {
+            case 'h':
+                std::cout << "usage: tty-clock [-hsc1]" << std::endl;
+                std::cout << "    -h show this oage" << std::endl;
+                std::cout << "    -s show second" << std::endl;
+                std::cout << "    -c center the clock when start" << std::endl;
+                std::cout << "    -e show once\n" << std::endl;
+                std::cout << "keyboard shortcuts:" <<std::endl;
+                std::cout << "    Q: quit tty-clock" << std::endl;
+                std::cout << "    C: center the clock" << std::endl;
+                std::cout << "    M: Locate the clock at topleft" << std::endl;
+                std::cout << "    S: show/unshow the clock" << std::endl;
+                return 0;
+            case 's':
+                showSecond = true;
+                break;
+            case 'c':{
+                b = console.getConsoleBox();
+                int clockwidth = showSecond ? 54 : 38;
+                spaceCount = (b.width - clockwidth) / 2;
+                returnCount = (b.height - 5) / 2;
+                break;
+            }
+            case '1':
+                showonce = true;
+        }
     }
     while (true) {
         system("clear");
@@ -94,6 +127,7 @@ int main(void) {
                     ;
             }
         }
+        if (showonce) break;
         dt.Now();
         sleep(1);
     }

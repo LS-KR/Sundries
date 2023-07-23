@@ -2,9 +2,16 @@
 ## tty-clock
 
 Show a clock in your tty.  
+```
+usage: tty-clock [-hsc1]
+    -h show this oage
+    -s show second
+    -c center the clock when start
+    -e show once
 
-> Press s to show/unshow second  
-> Press c to center the clock  
-> Press q to quit  
-> Press m to locate the clock at top-left  
-
+keyboard shortcuts:
+    Q: quit tty-clock
+    C: center the clock
+    M: Locate the clock at topleft
+    S: show/unshow the clock
+```
