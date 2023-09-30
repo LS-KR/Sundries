@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
                 std::cout << "    Q: quit tty-clock" << std::endl;
                 std::cout << "    C: center the clock" << std::endl;
                 std::cout << "    M: Locate the clock at topleft" << std::endl;
-                std::cout << "    S: show/unshow the clock" << std::endl;
+                std::cout << "    S: show/unshow the second" << std::endl;
                 return 0;
             case 's':
                 showSecond = true;
