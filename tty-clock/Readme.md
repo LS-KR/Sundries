@@ -7,7 +7,7 @@ usage: tty-clock [-hsc1]
     -h show this oage
     -s show second
     -c center the clock when start
-    -e show once
+    -1 show once
 
 keyboard shortcuts:
     Q: quit tty-clock

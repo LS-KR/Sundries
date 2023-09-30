@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
                 std::cout << "    -h show this oage" << std::endl;
                 std::cout << "    -s show second" << std::endl;
                 std::cout << "    -c center the clock when start" << std::endl;
-                std::cout << "    -e show once\n" << std::endl;
+                std::cout << "    -1 show once\n" << std::endl;
                 std::cout << "keyboard shortcuts:" <<std::endl;
                 std::cout << "    Q: quit tty-clock" << std::endl;
                 std::cout << "    C: center the clock" << std::endl;
