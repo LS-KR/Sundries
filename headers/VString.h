@@ -5,9 +5,7 @@
 #include <curses.h>
 #define readonly const
 
-#include <iostream>
 #include <string>
-#include <cctype>
 #include <cstring>
 
 class VString {
