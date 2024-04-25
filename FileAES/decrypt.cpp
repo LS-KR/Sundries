@@ -12,10 +12,11 @@
 std::string filename;
 std::string passwd;
 std::string output = "output.bin";
+bool ascii = false;
 
 int main(int argc, char** argv) {
     int opt = 0;
-    while ((opt = getopt(argc, argv, "f:p:o:")) != -1) {
+    while ((opt = getopt(argc, argv, "af:p:o:")) != -1) {
         switch (opt) {
             case 'f':
                 filename = optarg;
@@ -26,8 +27,10 @@ int main(int argc, char** argv) {
             case 'o':
                 output = optarg;
                 break;
+            case 'a':
+                ascii = true;
             default:
-                std::cout << "usage: encrypt <-f file> <-p password> [-o output]" << std::endl;
+                std::cout << "usage: encrypt <-f file> <-p password> [-o output] [-a ascii]" << std::endl;
                 return 0;
         }
     }
@@ -60,6 +63,7 @@ int main(int argc, char** argv) {
     }
     std::vector<unsigned char> passwdVec;
     for (auto v : passwd) {
+        if (ascii && ((v < 0x20) || (v > 0x7E))) continue;
         passwdVec.push_back(v);
     }
     auto decrypted = aes.DecryptECB(data, passwdVec);
