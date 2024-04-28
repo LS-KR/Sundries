@@ -1,0 +1,12 @@
+.build/
+build/
+.out/
+.output/
+out/
+output/
+.obj/
+.object/
+obj/
+object/
+.cache/
+cache/

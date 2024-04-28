@@ -18,7 +18,7 @@ namespace ImageDecode
                 filesource = Console.ReadLine();
             }
             else
-                filesource = args[0];
+                filesource = args[0].Trim().Trim('\"');
             try
             {
                 byte[] head =

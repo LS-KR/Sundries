@@ -18,7 +18,7 @@ namespace ImageEncode
                 filesource = Console.ReadLine();
             }
             else
-                filesource = args[0];
+                filesource = args[0].Trim().Trim('\"');
             try
             {
                 byte[] bts = File.ReadAllBytes(filesource);
